@@ -1,0 +1,20 @@
+<head>
+  <title>Template bug</title>
+</head>
+
+<body>
+  {{> templateBug}}
+</body>
+
+<template name="contentBlockTemplate">
+  <div>
+    {{> Template.contentBlock}}
+  </div>
+</template>
+
+<template name="templateBug">
+  {{#contentBlockTemplate}}
+  <span>{{notVisibleString}}</span>
+  <span>{{visibleString}}</span>
+  {{/contentBlockTemplate}}
+</template>
